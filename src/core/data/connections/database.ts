@@ -1,4 +1,4 @@
-import {Connection, createConnection} from "typeorm";
+import {Connection, createConnection} from 'typeorm';
 
 export default class Database {
     private static connection: Connection;
@@ -6,19 +6,18 @@ export default class Database {
     public getConnection(): Connection {
         
         if (Database.connection == null || Database.connection undefined) {
-            throw new Error("CONEXAO_DATABASE_NAO_ABERTA");
-        }
-
+            throw new Error('CONEXAO_DATABASE_NAO_ABERTA');
+        
         return Database.connection;
     }
-
+};
     public async openConnection(): Promise<void> {
         if (Database.connection == null || Database.connection === undefined) {
             try {
                 Database.connection-await createConnection();
             }catch (error) {
-                console.log("ERRO AO CONECTAR NO BANCO, error);
-            }
-        }
-    }
-}
+                console.log('ERRO AO CONECTAR NO BANCO, error');
+            };
+        };
+    };
+};
