@@ -14,6 +14,11 @@ module.exports = {
         ],
 
     cli: {
-        entitiesDir: "/src/core/data/database/entities"
-        }
+        entitiesDir: "/src/core/data/database/entities",
+        },
+    extra: {
+        ssl: {
+            rejectUnauthorized: false,
+        },
+    },
 }
